@@ -17,9 +17,12 @@ jobs:
         shell: bash
         run: |
           set -o pipefail
-          pytest -q -rfE 2>&1 | tee pytest.out
+          pytest -q -rfE -p no:cacheprovider 2>&1 | tee pytest.out
           status=${PIPESTATUS[0]}
-          grep -E "^(FAILED|ERROR) " pytest.out | cut -c1-900 | sed 's/^/::error::/' || true
+          if [ "$status" != "0" ]; then
+            echo "::error::pytest exit $status; head: $(head -c 1200 pytest.out | tr '\n' '|')"
+            echo "::error::pytest tail: $(tail -c 3000 pytest.out | tr '\n' '|')"
+          fi
           exit $status
       - name: Intent routing gate (golden set)
         run: python -m evaluation.run_intent_eval
