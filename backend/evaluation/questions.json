@@ -1,0 +1,19 @@
+[
+  {"id": "q01", "type": "exact", "question": "Who built the lighthouse?", "expect": "answered", "pages": [1], "must_contain": ["Miriam Okafor"]},
+  {"id": "q02", "type": "number", "question": "How tall is the lighthouse tower?", "expect": "answered", "pages": [1], "must_contain": ["38"]},
+  {"id": "q03", "type": "date", "question": "In what year did the light become fully automatic?", "expect": "answered", "pages": [1], "must_contain": ["1989"]},
+  {"id": "q04", "type": "paraphrase", "question": "Which keeper stayed in the job the longest?", "expect": "answered", "pages": [2], "must_contain": ["Tomas Reyes"]},
+  {"id": "q05", "type": "number", "question": "How many steps lead to the lantern room?", "expect": "answered", "pages": [2], "must_contain": ["212"]},
+  {"id": "q06", "type": "technical", "question": "What is the flash pattern of the Fresnel lens?", "expect": "answered", "pages": [3], "must_contain": ["Fl(2) W 15s"]},
+  {"id": "q07", "type": "paraphrase", "question": "How far away can sailors see the light on a clear night?", "expect": "answered", "pages": [3], "must_contain": ["22"]},
+  {"id": "q08", "type": "date", "question": "When was the cracked prism repaired?", "expect": "answered", "pages": [3], "must_contain": ["1968"]},
+  {"id": "q09", "type": "exact", "question": "How many visitors come to the visitor centre each year?", "expect": "answered", "pages": [4], "must_contain": ["40,000"]},
+  {"id": "q10", "type": "ambiguous", "question": "What happened in 1951?", "expect": "answered", "pages": [1], "must_contain": ["Electricity"]},
+  {"id": "u01", "type": "unanswerable", "question": "What was Miriam Okafor's salary?", "expect": "insufficient_evidence"},
+  {"id": "u02", "type": "unanswerable", "question": "Who is the current mayor of Port Vellan?", "expect": "insufficient_evidence"},
+  {"id": "u03", "type": "unanswerable", "question": "What is the boiling point of mercury?", "expect": "insufficient_evidence"},
+  {"id": "u04", "type": "unanswerable", "question": "Explain the causes of the French Revolution.", "expect": "insufficient_evidence"},
+  {"id": "x01", "type": "cross_lingual_en_doc_ur_question", "question": "لائٹ ہاؤس کس نے بنایا؟", "language": "auto", "expect": "answered", "pages": [1], "must_contain": []},
+  {"id": "x02", "type": "cross_lingual_en_doc_ur_question", "question": "لالٹین کے کمرے تک کتنی سیڑھیاں ہیں؟", "language": "auto", "expect": "answered", "pages": [2], "must_contain": []},
+  {"id": "x03", "type": "en_question_ur_answer", "question": "How tall is the lighthouse tower?", "language": "ur", "expect": "answered", "pages": [1], "must_contain": []}
+]
