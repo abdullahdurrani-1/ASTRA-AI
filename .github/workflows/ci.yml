@@ -16,9 +16,10 @@ jobs:
       - name: pytest (failures surfaced as annotations)
         shell: bash
         run: |
-          set -o pipefail
-          pytest -q -rfE -p no:cacheprovider 2>&1 | tee pytest.out
-          status=${PIPESTATUS[0]}
+          set +e
+          pytest -q -rfE -p no:cacheprovider > pytest.out 2>&1
+          status=$?
+          cat pytest.out
           if [ "$status" != "0" ]; then
             echo "::error::pytest exit $status; head: $(head -c 1200 pytest.out | tr '\n' '|')"
             echo "::error::pytest tail: $(tail -c 3000 pytest.out | tr '\n' '|')"
