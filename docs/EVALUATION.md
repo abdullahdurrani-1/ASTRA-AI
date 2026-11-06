@@ -198,3 +198,19 @@ Offline check on the live index (1326 chunks, no LLM call):
 | Urdu + "Who was Ahmad Shah's father?" | p31 "EARLY LIFE OF AHMAD SHAH ... second son of Zaman Khan" (sim 0.72, kw 1.00) | 1.00 |
 
 Tests: `tests/test_crosslingual.py` (8) cover the guard, an Urdu question over an English document answered with the right page only when the English phrasing is present, and the transcript keeping the user's original words. Not yet measured live: the quality of the router model's translation (free-tier quota).
+
+## Live check after quota reset: rewrite, streaming, cross-lingual (2026-11-06)
+Gemini 3.5-flash answer model, 3.1-flash-lite router, scanned book (1326 chunks). About 14 free-tier requests used.
+
+| Question | Rewrite / search text | Result |
+|---|---|---|
+| "who is ahmad shah" (first call of the day) | "Who is Ahmad Shah?" | answered; cited pp. 148, 425, 427 (summary from several passages, not the biography page); first streamed token after 61 s, total 62 s |
+| "who was his fathr" (follow-up) | "who was Ahmad Shah's father" | answered; cited p. 31; "Zaman Khan Abdali of the Saddozei clan"; first token 5.5 s |
+| "احمد شاہ کے والد کون تھے؟" | English search text "Who was Ahmad Shah's father?" | 1st attempt: **error, model output not valid JSON**; 2nd and 3rd attempts: answered in Urdu, cited p. 31 |
+| "احمد شاہ کہاں پیدا ہوئے؟" | English search text generated | answered in Urdu, cited p. 31 twice, correctly notes the two accounts of the birthplace (Multan vs Herat) |
+
+Findings:
+- Typo and pronoun rewrite works live and the cross-lingual search puts the biography page first for Urdu questions, as the offline check predicted.
+- The 61 s first call is not retrieval (retrieval + embedding took under 2 s on later calls): it is the answer model's first request of the day. Later calls took 2–19 s. Keep the 60 s timeout; a lower value would have failed this call.
+- One of four Urdu answers was unparseable JSON from the model (status "error" shown to the user as "could not prepare an answer"). The failure is intermittent. `rag_unparseable_output` now logs the reason, length, and the first and last 120 characters so the next occurrence can be diagnosed; candidate fixes are a JSON-schema response format where the provider supports it and a single retry on parse failure.
+- "Who is X" on a 479-page book still answers from scattered passages. A reranker (M12) or a "person overview" retrieval strategy would be needed for biography-style questions.

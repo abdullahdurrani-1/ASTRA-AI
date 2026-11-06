@@ -174,8 +174,13 @@ def _finish(raw: str, p: _Prepared, is_mock: bool) -> RagAnswer:
     language, docs, result, log = p.language, p.docs, p.result, p.log
     try:
         data = parse_llm_json(raw)
-    except (ValueError, json.JSONDecodeError):
-        logger.warning("rag_unparseable_output", extra=log)
+    except (ValueError, json.JSONDecodeError) as e:
+        # Head and tail only: enough to diagnose fences/truncation without logging the answer.
+        head, tail = raw[:120], raw[-120:] if len(raw) > 120 else ""
+        logger.warning(
+            "rag_unparseable_output",
+            extra={**log, "reason": str(e)[:80], "chars": len(raw), "head": head, "tail": tail},
+        )
         return RagAnswer(GENERATION_ERROR[language], "error", language)
     answer = str(data.get("answer") or "").strip()
     if data.get("status") != "answered" or not answer:
