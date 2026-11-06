@@ -75,7 +75,7 @@ cd backend && .venv/Scripts/python -m devtools.gemini_review [--diff]
 
 The reviewer runs ruff, mypy and pytest. If a check fails, it sends the **redacted** output to Gemini and writes the suggestions to `backend/devtools/reports/`. It never applies changes or runs anything Gemini suggests. To disable it, set `GEMINI_REVIEW_ENABLED=false` (the default). See [docs/SECURITY.md](docs/SECURITY.md).
 
-## Status (2026-10-28)
+## Status (2026-11-06)
 
 | Phase | State | Evidence |
 |---|---|---|
