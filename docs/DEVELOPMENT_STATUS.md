@@ -1,6 +1,8 @@
 # Astra AI — Development Status
 
-Updated after every phase. Current: **Phase 0 complete (2026-11-05), awaiting owner approval for Phase 1.**
+Updated after every phase. Current: **Phase 1 in progress. M1 (git, CI) and M2 (dependency pinning, Docker image) complete on 2026-11-06; next is M3 (request IDs, API v1).**
+
+Repository: https://github.com/abdullahdurrani-1/ASTRA-AI (CI green on `main` since commit 7610ed4). First CI runs failed because the root ignore rule `data/` also hid `backend/app/data` (intent lexicons); fixed by anchoring the rule to `/data/`.
 
 ## Completed features (Astra 1.x, verified)
 - Document ingestion: PDF (text and scanned via Tesseract OCR), TXT, MD; verified indexing; failure reasons; restart recovery.
@@ -11,7 +13,7 @@ Updated after every phase. Current: **Phase 0 complete (2026-11-05), awaiting ow
 - Providers: Gemini/OpenAI/Anthropic LLM adapters with retries, timeouts, fallback model; local embeddings; OpenAI speech adapters (unconfigured).
 
 ## Pending features (by phase, see IMPLEMENTATION_ROADMAP.md)
-- Phase 1: git + CI on GitHub, dependency pinning, auth/JWT/workspaces, PostgreSQL + Alembic, rate limiting, API v1, request IDs.
+- Phase 1: ~~git + CI on GitHub, dependency pinning~~ (done), auth/JWT/workspaces, PostgreSQL + Alembic, rate limiting, API v1, request IDs.
 - Phase 2: Qdrant, DOCX, PaddleOCR engine, assets (page images, tables), reranking, parent context, chunk/embedding benchmarks, collections UI.
 - Phase 3: web search providers, search decision, source scoring, web citations, injection isolation.
 - Phase 4: local LLM provider, context budgeter, model router, verification engine, open-weight evaluation.
@@ -27,10 +29,11 @@ Updated after every phase. Current: **Phase 0 complete (2026-11-05), awaiting ow
 - Backend image is 2.8 GB because of the CPU torch stack (`requirements-ml.txt`); acceptable for now, a slimmer embedding runtime (ONNX) is an option later.
 - `.env.example` omits 13 settings that the code reads (for example `PROVIDER_TIMEOUT_SECONDS`, `LOCAL_USER_ID`, `CORS_ORIGINS`, `RETRIEVAL_CANDIDATES`, `MIN_SUBSTANTIVE_CHUNK_CHARS`); see ARCHITECTURE_REVIEW.md.
 
-## Tests executed (2026-11-05)
+## Tests executed (2026-11-06)
 | Suite | Result |
 |---|---|
-| backend pytest | 260 passed |
+| backend pytest | 261 passed locally (Python 3.13), in a clean venv, in a Linux 3.12 container, and on GitHub CI |
+| Docker | backend image built (2.8 GB) and run: health OK, Tesseract eng/osd/urd, torch 2.14.1+cpu |
 | ruff check / format | clean |
 | mypy | clean (36 files) |
 | frontend vitest | 24 passed |
@@ -40,4 +43,4 @@ Updated after every phase. Current: **Phase 0 complete (2026-11-05), awaiting ow
 See `.env.example`. Minimum for a real answer: `LLM_PROVIDER=gemini`, `GEMINI_API_KEY`, `LLM_MODEL_ANSWER`, `LLM_MODEL_ROUTER`, `LLM_MODEL_FALLBACK`, `EMBEDDING_PROVIDER=sentence_transformers`. OCR: `OCR_ENABLED=true`, Tesseract installed with `eng` and `urd` data.
 
 ## Next implementation step
-On approval: Phase 1, item 1 (initialise git with a correct `.gitignore`, first commit, push, confirm CI), then item 2 (dependency pinning and a Docker build), then authentication.
+M3: request/trace IDs in responses and logs, `/api/v1` prefix with the old path kept as an alias. Then M4 (Alembic + PostgreSQL mode) and M5 (authentication).
