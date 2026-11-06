@@ -62,7 +62,7 @@ Values are read from `E:/Astra_AI/.env` (owner-managed; never committed, never p
 | Milestone | New requirement | Type |
 |---|---|---|
 | M1 | GitHub repository | service (free) |
-| M2 | Docker build; `pip-audit`; CPU torch wheel index | tool |
+| M2 | Docker build (done: `astra-backend` image, 2.8 GB); `requirements-ml.txt` for the local embedding stack | tool |
 | M4 | PostgreSQL 16 container (`DATABASE_URL=postgresql+psycopg://...`) | container |
 | M5 | `AUTH_SECRET` (JWT signing key, generated), `argon2-cffi`, `python-jose` or `PyJWT` | library + secret |
 | M6 | optional Redis for shared rate limits; optional `MALWARE_SCAN_CMD` with ClamAV | container (optional) |

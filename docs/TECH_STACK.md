@@ -30,7 +30,7 @@ Written 2026-11-05. "Now" is what the repository uses and has been verified runn
 | Experiment tracking | none | MLflow (Phase 7), DVC for golden datasets | Only when fine-tuning starts. |
 | Deployment | Dockerfiles + compose (unbuilt) | Same, verified; no Kubernetes | |
 
-## Dependency hygiene to fix in Phase 1
-- `backend/requirements.txt` does not list `sentence-transformers` or `torch` although `EMBEDDING_PROVIDER=sentence_transformers` is the live configuration; pin them (CPU torch index).
-- Tesseract and its `urd` traineddata are not installed in `backend/Dockerfile`.
-- Python 3.13 is used locally; `pyproject` says `>=3.12`. Keep 3.12 as the CI/Docker target until all ML wheels are confirmed for 3.13.
+## Dependency hygiene (fixed in M2, 2026-11-06)
+- `backend/requirements-ml.txt` pins `torch` (CPU wheel index), `sentence-transformers` and `transformers`; CI installs only `requirements-dev.txt` (mock embeddings), the Docker image installs both.
+- `backend/Dockerfile` is `python:3.12-slim` with Tesseract 5.5 and `eng`/`osd`/`urd` data; verified by running the image (health OK, `torch 2.14.1+cpu`).
+- Python 3.13 locally, 3.12 in CI and Docker; a clean 3.13 venv from the declared requirements passes the suite.

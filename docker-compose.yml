@@ -8,6 +8,8 @@ services:
         required: false
     environment:
       DATA_DIR: /data
+      # Container paths win over any Windows paths in .env.
+      TESSDATA_DIR: /usr/share/tesseract-ocr/5/tessdata
     volumes:
       - astra-data:/data
     ports:

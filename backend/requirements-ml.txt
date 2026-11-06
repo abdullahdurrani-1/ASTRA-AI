@@ -1,0 +1,7 @@
+# Local ML stack for EMBEDDING_PROVIDER=sentence_transformers (CPU). Installed in the Docker
+# image and on developer machines; CI uses mock embeddings and skips this file.
+# The extra index serves CPU-only torch wheels on Linux (PyPI's Linux wheel pulls CUDA libraries).
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.14.1
+sentence-transformers==6.2.0
+transformers==5.21.0

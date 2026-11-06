@@ -24,7 +24,7 @@ Updated after every phase. Current: **Phase 0 complete (2026-11-05), awaiting ow
 - No authentication: local single-user only; do not expose port 8000.
 - Gemini key is free tier (~20 answers/day/model); live tests are rationed. Rewrite/translation quality and streamed answers on the real book remain to be observed live.
 - Urdu OCR quality on Nastaliq scans is unmeasured.
-- `sentence-transformers`/`torch` undeclared in requirements; Tesseract missing from Dockerfile; Docker images never built; CI never run (no git repository).
+- Backend image is 2.8 GB because of the CPU torch stack (`requirements-ml.txt`); acceptable for now, a slimmer embedding runtime (ONNX) is an option later.
 - `.env.example` omits 13 settings that the code reads (for example `PROVIDER_TIMEOUT_SECONDS`, `LOCAL_USER_ID`, `CORS_ORIGINS`, `RETRIEVAL_CANDIDATES`, `MIN_SUBSTANTIVE_CHUNK_CHARS`); see ARCHITECTURE_REVIEW.md.
 
 ## Tests executed (2026-11-05)
