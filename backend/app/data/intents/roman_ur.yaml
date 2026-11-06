@@ -1,0 +1,26 @@
+# Roman Urdu (Urdu written in Latin script). First-class input: replies mirror this script.
+language: roman_ur
+SALAM: [salam, salaam, slam, assalam, asalam, assalamualaikum, assalamu alaikum,
+  assalam o alaikum, assalam u alaikum, asalam o alaikum, asalamualaikum, aoa,
+  salam alaikum, salaam alaikum, salam alekum, assalamualykum, salam walaikum]
+GREETING: [adaab, adab, aadab, subah bakhair, shab bakhair, shaam bakhair, khush amdeed]
+SMALLTALK: [kya hal hai, kya haal hai, kya hal hain, kya haal hain, kaise ho, kaisay ho,
+  kese ho, kaise hain, kaisay hain, kaise hain aap, aap kaise hain, ap kaise hain,
+  kia hal hai, kia haal hai, theek ho, sab theek, sab khairiyat, khairiyat hai,
+  aur sunao, kya scene hai, kaisi ho, aap kaisi hain]
+IDENTITY: [aap kaun ho, ap kon ho, tum kaun ho, aap kaun hain, ap kon hain, tumhara naam kya hai,
+  aap ka naam kya hai, apka naam kya hai, kya tum robot ho, kya aap insaan hain]
+CAPABILITIES: [aap kya kar sakte hain, ap kya kar sakte ho, tum kya kar sakte ho,
+  aap kya kar sakti hain, kya aap urdu samajhte hain, kya ap urdu bol sakte hain,
+  meri madad karo, madad, madad chahiye]
+HOWTO: [upload kaise karun, document kaise upload karun, file kaise upload karun,
+  ye kaise kaam karta hai, isko kaise use karun]
+THANKS: [shukriya, shukria, bohat shukriya, bohot shukriya, bahut shukriya, bht shukriya,
+  meherbani, mehrbani, jazakallah, jazakallah khair, jazak allah, thanks yaar, shukriya astra,
+  theek hai, thik hai, acha, achha, zabardast, bohat acha, bahut acha]
+FAREWELL: [allah hafiz, khuda hafiz, khudahafiz, allahhafiz, phir milenge, chalo bye,
+  acha bye, fi aman allah]
+LANG_EN: [english mein jawab do, english mein bataen, english mein batao,
+  angrezi mein jawab do, angrezi mein]
+LANG_UR: [urdu mein jawab do, urdu mein bataen, urdu mein batao, urdu mein, urdu mein baat karo]
+FILLER: [ji, jee, janab, bhai, yaar, sahab, sahib]

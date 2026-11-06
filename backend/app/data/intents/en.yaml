@@ -1,0 +1,30 @@
+# Whole-message phrases (matched after normalization: case, punctuation, emoji and repeated
+# letters are ignored). Topic -> public intent mapping lives in app/services/intent.py.
+language: en
+GREETING: [hi, hello, hey, hey there, hi there, hello there, hiya, yo, howdy, greetings,
+  good morning, good afternoon, good evening, good day, morning, evening, hola, sup, wassup]
+SMALLTALK: [how are you, how are you doing, how r u, how are u, hows it going, how is it going,
+  whats up, how do you do, how have you been, you good, are you ok, are you okay, nice to meet you]
+IDENTITY: [who are you, what are you, what is your name, whats your name, your name,
+  are you a robot, are you a bot, are you human, are you a human, are you an ai, are you real,
+  are you chatgpt, are you gpt, are you claude, introduce yourself, tell me about yourself,
+  what is astra, who made you, who built you]
+CAPABILITIES: [what can you do, what do you do, help, what can i ask, what can i ask you,
+  how can you help, how can you help me, what are your features, what are your limits,
+  what are your limitations, what languages do you speak, what languages do you support,
+  which languages, which languages do you support, do you speak urdu, can you speak urdu,
+  do you understand urdu, can you read scanned pdfs, can you talk, can i talk to you,
+  what files do you support, what file types do you support, what formats do you support]
+HOWTO: [how do i upload, how do i upload a document, how do i upload a file, how to upload,
+  how to upload a document, how do i use this, how do i use you, how does this work,
+  how do i start, how do i get started, how do i ask a question, how do i add a document]
+THANKS: [thanks, thank you, thank you so much, thanks a lot, many thanks, thx, ty, cheers,
+  appreciated, much appreciated, great thanks, ok thanks, okay thanks, perfect thanks, thank u,
+  thanks astra, great, awesome, perfect, nice, cool, ok, okay, got it, understood]
+FAREWELL: [bye, goodbye, good bye, bye bye, see you, see you later, see ya, good night,
+  take care, later, cya, thats all, that is all, im done]
+LANG_EN: [reply in english, answer in english, english please, in english please,
+  speak english, switch to english, use english, english]
+LANG_UR: [reply in urdu, answer in urdu, urdu please, in urdu please, speak urdu,
+  switch to urdu, use urdu, urdu]
+FILLER: [astra, there, dear, friend, buddy, sir, madam, again, so, and, again]

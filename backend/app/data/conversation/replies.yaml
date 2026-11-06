@@ -1,0 +1,160 @@
+# Template bank for conversational replies (no model call). Version: replies.v1
+# Every Urdu / Roman Urdu string here is listed in docs/URDU_QA.md for native-speaker review
+# (regenerate with: python -m devtools.export_urdu_qa).
+# Placeholders: {titles} {formats} {max_mb} {n} {name} {stage} {reason} {ocr_langs} {heading}
+
+greeting:
+  en:
+    any: ["Hello!", "Hi there!", "Hello, I'm Astra.", "Hi! Good to see you.", "Hey there!"]
+    morning: ["Good morning!"]
+    afternoon: ["Good afternoon!"]
+    evening: ["Good evening!"]
+  ur:
+    any: ["آداب!", "خوش آمدید!", "ہیلو! میں آسٹرا ہوں۔", "آداب! آپ سے مل کر خوشی ہوئی۔", "خوش آمدید! میں آسٹرا ہوں۔"]
+    morning: ["صبح بخیر!"]
+    afternoon: ["آداب!"]
+    evening: ["شام بخیر!"]
+  roman_ur:
+    any: ["Adaab!", "Khush aamdeed!", "Hello! Main Astra hoon.", "Adaab! Aap se mil kar khushi hui.", "Khush aamdeed! Main Astra hoon."]
+    morning: ["Subah bakhair!"]
+    afternoon: ["Adaab!"]
+    evening: ["Shaam bakhair!"]
+
+salam_reply:
+  en: ["Wa alaikum assalam!"]
+  ur: ["وعلیکم السلام!"]
+  roman_ur: ["Walaikum assalam!"]
+
+smalltalk:
+  en: ["I'm doing well, thank you for asking!", "All good here, thanks for asking!", "I'm well, thank you!"]
+  ur: ["میں ٹھیک ہوں، پوچھنے کا شکریہ!", "الحمدللہ، سب ٹھیک ہے۔ پوچھنے کا شکریہ!", "میں بالکل ٹھیک ہوں، شکریہ!"]
+  roman_ur: ["Main theek hoon, poochne ka shukriya!", "Alhamdulillah, sab theek hai. Poochne ka shukriya!", "Main bilkul theek hoon, shukriya!"]
+
+thanks:
+  en: ["You're welcome!", "Happy to help!", "Glad I could help!", "Anytime!"]
+  ur: ["آپ کا بھی شکریہ!", "خوشی ہوئی کہ میں مدد کر سکا۔", "کوئی بات نہیں!", "حاضر ہوں، جب چاہیں پوچھیں۔"]
+  roman_ur: ["Aap ka bhi shukriya!", "Khushi hui ke main madad kar saka.", "Koi baat nahin!", "Haazir hoon, jab chahein poochein."]
+
+farewell:
+  en: ["Goodbye! Your documents will be here when you come back.", "Take care! Come back any time."]
+  ur: ["اللہ حافظ! آپ کی دستاویزات یہیں محفوظ رہیں گی۔", "خدا حافظ! جب چاہیں دوبارہ آئیں۔"]
+  roman_ur: ["Allah hafiz! Aap ke documents yahin mehfooz rahenge.", "Khuda hafiz! Jab chahein dobara aaein."]
+
+identity:
+  en: ["I'm Astra, an AI assistant that answers questions from the documents you upload and shows the exact pages each answer comes from. I'm software, not a person."]
+  ur: ["میں آسٹرا ہوں، ایک AI معاون جو آپ کی اپ لوڈ کردہ دستاویزات سے سوالوں کے جواب دیتا ہے اور ہر جواب کے ساتھ متعلقہ صفحات بھی دکھاتا ہے۔ میں ایک سافٹ ویئر ہوں، انسان نہیں۔"]
+  roman_ur: ["Main Astra hoon, ek AI assistant jo aap ke upload kiye hue documents se sawalon ke jawab deta hai aur har jawab ke saath mutaliqa safhaat bhi dikhata hai. Main software hoon, insaan nahin."]
+
+injection:
+  en: ["I'm Astra, a document assistant, and my instructions can't be changed from the chat. I'm happy to answer questions about your documents."]
+  ur: ["میں آسٹرا ہوں، ایک دستاویزی معاون، اور چیٹ کے ذریعے میری ہدایات تبدیل نہیں کی جا سکتیں۔ آپ کی دستاویزات کے بارے میں سوالوں کا جواب دینے میں مجھے خوشی ہوگی۔"]
+  roman_ur: ["Main Astra hoon, ek document assistant, aur chat ke zariye meri hidayaat tabdeel nahin ki ja saktin. Aap ke documents ke baare mein sawalon ka jawab dene mein mujhe khushi hogi."]
+
+howto:
+  en: ["Drag a {formats} file (up to {max_mb} MB) onto the upload box on the left, or click it to browse. When it shows Ready, tick it and type your question."]
+  ur: ["بائیں جانب اپ لوڈ والے خانے میں {formats} فائل (زیادہ سے زیادہ {max_mb} MB) ڈالیں یا کلک کر کے منتخب کریں۔ جب وہ Ready دکھائے تو اسے منتخب کر کے اپنا سوال لکھیں۔"]
+  roman_ur: ["Baain taraf upload wale khaane mein {formats} file (ziyada se ziyada {max_mb} MB) daalein ya click kar ke muntakhib karein. Jab woh Ready dikhaye to usay select kar ke apna sawal likhein."]
+
+lang_switch:
+  en: ["Sure, I'll reply in English from now on."]
+  ur: ["ضرور، اب میں اردو میں جواب دوں گا۔"]
+  roman_ur: ["Zaroor, ab main Urdu mein jawab doon ga."]
+
+unclear:
+  en: ["I'm not sure what you mean. Would you like to upload a document, ask about one, or see what I can do?"]
+  ur: ["مجھے آپ کی بات پوری طرح سمجھ نہیں آئی۔ کیا آپ دستاویز اپ لوڈ کرنا چاہتے ہیں، کسی دستاویز کے بارے میں پوچھنا چاہتے ہیں، یا یہ جاننا چاہتے ہیں کہ میں کیا کر سکتا ہوں؟"]
+  roman_ur: ["Mujhe aap ki baat poori tarah samajh nahin aai. Kya aap document upload karna chahte hain, kisi document ke baare mein poochna chahte hain, ya yeh jaanna chahte hain ke main kya kar sakta hoon?"]
+
+general_knowledge:
+  en: ["I answer from your documents rather than general knowledge, so I can show where every answer comes from. Ask me about your selected documents, or upload one that covers this topic."]
+  ur: ["میں عام معلومات کے بجائے آپ کی دستاویزات سے جواب دیتا ہوں تاکہ ہر جواب کا ماخذ دکھا سکوں۔ منتخب دستاویزات کے بارے میں پوچھیں، یا اس موضوع پر کوئی دستاویز اپ لوڈ کریں۔"]
+  roman_ur: ["Main aam maloomat ke bajaye aap ke documents se jawab deta hoon taake har jawab ka maakhaz dikha sakoon. Muntakhib documents ke baare mein poochein, ya is mauzoo par koi document upload karein."]
+
+needs_documents:
+  en: ["To answer that, I need a document. Upload one or select a ready document on the left, then ask again."]
+  ur: ["اس کا جواب دینے کے لیے مجھے کسی دستاویز کی ضرورت ہے۔ بائیں جانب کوئی دستاویز اپ لوڈ یا منتخب کریں، پھر دوبارہ پوچھیں۔"]
+  roman_ur: ["Is ka jawab dene ke liye mujhe kisi document ki zaroorat hai. Baain taraf koi document upload ya select karein, phir dobara poochein."]
+
+# State-aware nudges (built from real document state; never invented).
+nudge_no_docs:
+  en: "Upload a {formats} file and I'll answer questions about it, with page references."
+  ur: "کوئی {formats} فائل اپ لوڈ کریں، میں صفحات کے حوالوں کے ساتھ اس کے بارے میں سوالوں کے جواب دوں گا۔"
+  roman_ur: "Koi {formats} file upload karein, main safhaat ke hawalon ke saath us ke baare mein sawalon ke jawab doon ga."
+nudge_ready:
+  en: "I'm ready to answer from {titles}."
+  ur: "میں {titles} سے جواب دینے کے لیے تیار ہوں۔"
+  roman_ur: "Main {titles} se jawab dene ke liye tayyar hoon."
+nudge_try:
+  en: "Here are a few questions to try."
+  ur: "یہ چند سوال آزما سکتے ہیں۔"
+  roman_ur: "Yeh chand sawal aazma sakte hain."
+nudge_select:
+  en: "You have {n} ready document(s). Select one on the left to ask about it."
+  ur: "آپ کی {n} دستاویزات تیار ہیں۔ پوچھنے کے لیے بائیں جانب کوئی ایک منتخب کریں۔"
+  roman_ur: "Aap ke {n} documents tayyar hain. Poochne ke liye baain taraf koi ek select karein."
+nudge_processing:
+  en: "{name} is still being processed (current step: {stage})."
+  ur: "{name} پر ابھی کام جاری ہے (موجودہ مرحلہ: {stage})۔"
+  roman_ur: "{name} par abhi kaam jaari hai (maujooda marhala: {stage})."
+nudge_failed:
+  en: "{name} couldn't be processed: {reason} You can delete it and upload it again."
+  ur: "{name} پر کارروائی نہیں ہو سکی: {reason} آپ اسے حذف کر کے دوبارہ اپ لوڈ کر سکتے ہیں۔"
+  roman_ur: "{name} par kaarrawai nahin ho saki: {reason} Aap usay delete kar ke dobara upload kar sakte hain."
+
+suggestion_heading:
+  en: "What does the document say about {heading}?"
+  ur: "دستاویز میں {heading} کے بارے میں کیا لکھا ہے؟"
+  roman_ur: "Document mein {heading} ke baare mein kya likha hai?"
+
+chips:
+  en: ["What can you do?", "How do I upload a document?"]
+  ur: ["آپ کیا کر سکتے ہیں؟", "دستاویز کیسے اپ لوڈ کروں؟"]
+  roman_ur: ["Aap kya kar sakte hain?", "Document kaise upload karun?"]
+
+# Capability sheet: assembled from live settings, so it only lists enabled features.
+capabilities:
+  intro:
+    en: "Here's what I can do on this server:"
+    ur: "اس سرور پر میں یہ کر سکتا ہوں:"
+    roman_ur: "Is server par main yeh kar sakta hoon:"
+  docs:
+    en: "Answer questions about your {formats} files and show the page each answer comes from."
+    ur: "آپ کی {formats} فائلوں کے بارے میں سوالوں کے جواب دینا اور ہر جواب کا صفحہ دکھانا۔"
+    roman_ur: "Aap ki {formats} files ke baare mein sawalon ke jawab dena aur har jawab ka safha dikhana."
+  languages:
+    en: "Understand and reply in English, Urdu and Roman Urdu."
+    ur: "انگریزی، اردو اور رومن اردو سمجھنا اور ان میں جواب دینا۔"
+    roman_ur: "English, Urdu aur Roman Urdu samajhna aur in mein jawab dena."
+  ocr_on:
+    en: "Read scanned PDFs with OCR (languages: {ocr_langs})."
+    ur: "اسکین شدہ PDF کو OCR سے پڑھنا (زبانیں: {ocr_langs})۔"
+    roman_ur: "Scanned PDF ko OCR se parhna (zabanein: {ocr_langs})."
+  ocr_off:
+    en: "Scanned PDFs are not supported right now (OCR is off on this server)."
+    ur: "اسکین شدہ PDF ابھی پڑھی نہیں جا سکتیں (اس سرور پر OCR بند ہے)۔"
+    roman_ur: "Scanned PDF abhi parhi nahin ja saktin (is server par OCR band hai)."
+  voice_in:
+    en: "Take spoken questions through the microphone."
+    ur: "مائیکروفون کے ذریعے بولے گئے سوال سمجھنا۔"
+    roman_ur: "Microphone ke zariye bole gaye sawal samajhna."
+  voice_out:
+    en: "Read answers aloud."
+    ur: "جواب پڑھ کر سنانا۔"
+    roman_ur: "Jawab parh kar sunana."
+  limits:
+    en: "I only answer from your documents. If they don't cover something, I'll say so instead of guessing."
+    ur: "میں صرف آپ کی دستاویزات سے جواب دیتا ہوں۔ اگر کوئی بات ان میں نہ ہو تو اندازہ لگانے کے بجائے بتا دیتا ہوں۔"
+    roman_ur: "Main sirf aap ke documents se jawab deta hoon. Agar koi baat un mein na ho to andaza lagane ke bajaye bata deta hoon."
+  limits_general:
+    en: "I answer from your documents first. General-knowledge answers are clearly labelled as not coming from your documents."
+    ur: "میں پہلے آپ کی دستاویزات سے جواب دیتا ہوں۔ عام معلومات پر مبنی جواب پر واضح لکھا ہوتا ہے کہ یہ دستاویزات سے نہیں۔"
+    roman_ur: "Main pehle aap ke documents se jawab deta hoon. Aam maloomat wale jawab par wazeh likha hota hai ke yeh documents se nahin."
+  mock:
+    en: "Note: this server runs in mock mode, so document answers are placeholders, not real AI answers."
+    ur: "نوٹ: یہ سرور mock موڈ میں ہے، اس لیے دستاویزی جواب صرف نمونہ ہیں، اصل AI جواب نہیں۔"
+    roman_ur: "Note: yeh server mock mode mein hai, is liye document ke jawab sirf namoona hain, asal AI jawab nahin."
+
+stage_names:
+  en: {UPLOADED: uploaded, EXTRACTING: reading text, CHUNKING: splitting into passages, EMBEDDING: indexing meaning, INDEXING: saving the index, VERIFYING: checking the index}
+  ur: {UPLOADED: اپ لوڈ مکمل, EXTRACTING: متن پڑھا جا رہا ہے, CHUNKING: حصوں میں تقسیم, EMBEDDING: معنی کی انڈیکسنگ, INDEXING: انڈیکس محفوظ ہو رہا ہے, VERIFYING: انڈیکس کی جانچ}
+  roman_ur: {UPLOADED: upload mukammal, EXTRACTING: matn parha ja raha hai, CHUNKING: hisson mein taqseem, EMBEDDING: maani ki indexing, INDEXING: index mehfooz ho raha hai, VERIFYING: index ki jaanch}

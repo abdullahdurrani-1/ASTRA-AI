@@ -148,7 +148,10 @@ class IntentResult:
 def _lexicon() -> tuple[dict[tuple[str, ...], tuple[str, str]], int]:
     """Phrase (tuple of match keys) -> (topic, language), plus the longest phrase length."""
     table: dict[tuple[str, ...], tuple[str, str]] = {}
-    for path in sorted(_LEXICON_DIR.glob("*.yaml")):
+    paths = sorted(_LEXICON_DIR.glob("*.yaml"))
+    if not paths:
+        raise RuntimeError(f"No intent lexicons in {_LEXICON_DIR}: the package is incomplete.")
+    for path in paths:
         data = yaml.safe_load(path.read_text(encoding="utf-8"))
         lang = data.pop("language")
         for topic, phrases in data.items():

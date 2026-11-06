@@ -3,8 +3,8 @@
 .env.*
 !.env.example
 
-# Local data: uploads, vector index, database
-data/
+# Local data: uploads, vector index, database (repo root only; backend/app/data is source)
+/data/
 *.db
 
 # Python
